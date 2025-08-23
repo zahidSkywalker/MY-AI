@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { UserIcon, CogIcon, HeartIcon, ShoppingBagIcon, ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
 

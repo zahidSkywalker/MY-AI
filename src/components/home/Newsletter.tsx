@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { EnvelopeIcon, CheckIcon } from '@heroicons/react/24/outline';
 
