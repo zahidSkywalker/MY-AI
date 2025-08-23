@@ -1,172 +1,130 @@
 'use client'
 
-import { useState } from 'react'
-import { EnvelopeIcon, GiftIcon, TagIcon, BellIcon } from '@heroicons/react/24/outline'
+import React, { useState } from 'react';
+import { EnvelopeIcon, CheckIcon } from '@heroicons/react/24/outline';
 
-export default function Newsletter() {
-  const [email, setEmail] = useState('')
-  const [isSubscribed, setIsSubscribed] = useState(false)
+const Newsletter = () => {
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     if (email.trim()) {
-      // TODO: Implement newsletter subscription
-      console.log('Subscribing email:', email)
-      setIsSubscribed(true)
-      setEmail('')
-      
-      // Reset subscription status after 3 seconds
-      setTimeout(() => setIsSubscribed(false), 3000)
+      setIsSubscribed(true);
+      setEmail('');
+      // Reset after 3 seconds
+      setTimeout(() => setIsSubscribed(false), 3000);
     }
-  }
-
-  const benefits = [
-    {
-      icon: GiftIcon,
-      title: 'Exclusive Offers',
-      bengaliTitle: 'এক্সক্লুসিভ অফার',
-      description: 'Get early access to sales and special discounts'
-    },
-    {
-      icon: TagIcon,
-      title: 'Special Deals',
-      bengaliTitle: 'বিশেষ ডিল',
-      description: 'Receive personalized deals based on your preferences'
-    },
-    {
-      icon: BellIcon,
-      title: 'New Arrivals',
-      bengaliTitle: 'নতুন আগমন',
-      description: 'Be the first to know about new products and collections'
-    }
-  ]
+  };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-primary-600 to-bengali-600 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-                <span className="block bengali">আপডেট থাকুন</span>
-                <span className="block">Stay Updated</span>
-              </h2>
-              <p className="text-xl text-primary-100 leading-relaxed">
-                Subscribe to our newsletter and never miss out on the latest fashion trends, 
-                exclusive offers, and exciting new arrivals.
-                <span className="block bengali">আমাদের নিউজলেটার সাবস্ক্রাইব করুন এবং সর্বশেষ ফ্যাশন ট্রেন্ড, এক্সক্লুসিভ অফার এবং উত্তেজনাপূর্ণ নতুন আগমন থেকে বাদ পড়বেন না।</span>
-              </p>
-            </div>
+    <section className="relative py-20 overflow-hidden">
+      {/* Professional Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`
+        }}
+      >
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
 
-            {/* Benefits */}
-            <div className="space-y-4">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 p-2 bg-white/20 rounded-lg">
-                    <benefit.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-sm text-primary-100 bengali">
-                      {benefit.bengaliTitle}
-                    </p>
-                    <p className="text-sm text-primary-200">
-                      {benefit.description}
-                    </p>
-                  </div>
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+        <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Stay Updated
+            <span className="block text-xl font-normal text-gray-200 mt-2">আপডেট থাকুন</span>
+          </h2>
+          
+          <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
+            Subscribe to our newsletter for exclusive offers, special deals, and new arrivals. 
+            Be the first to know about our latest collections and promotions.
+          </p>
+
+          {!isSubscribed ? (
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="relative flex-1">
+                  <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email address"
+                    className="w-full pl-10 pr-4 py-3 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                    required
+                  />
                 </div>
-              ))}
+                <button
+                  type="submit"
+                  className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-full font-semibold transition-colors duration-200 whitespace-nowrap"
+                >
+                  Subscribe
+                  <span className="block text-sm">সাবস্ক্রাইব করুন</span>
+                </button>
+              </div>
+            </form>
+          ) : (
+            <div className="max-w-md mx-auto">
+              <div className="bg-green-500/20 border border-green-400/30 rounded-2xl p-6">
+                <div className="flex items-center justify-center gap-3 text-green-400 mb-3">
+                  <CheckIcon className="h-6 w-6" />
+                  <span className="text-lg font-semibold">Successfully Subscribed!</span>
+                </div>
+                <p className="text-green-300 text-sm">
+                  Thank you for subscribing! You'll receive our updates soon.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Benefits */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="text-2xl mb-2">🎁</div>
+              <h3 className="font-semibold text-white mb-1">Exclusive Offers</h3>
+              <p className="text-sm text-gray-300">Special discounts for subscribers</p>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl mb-2">🆕</div>
+              <h3 className="font-semibold text-white mb-1">New Arrivals</h3>
+              <p className="text-sm text-gray-300">First access to latest collections</p>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl mb-2">💎</div>
+              <h3 className="font-semibold text-white mb-1">VIP Access</h3>
+              <p className="text-sm text-gray-300">Priority customer benefits</p>
             </div>
           </div>
 
-          {/* Right Content - Newsletter Form */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-            <div className="text-center mb-6">
-              <div className="inline-flex p-3 bg-white/20 rounded-full mb-4">
-                <EnvelopeIcon className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2">
-                <span className="block bengali">নিউজলেটার সাবস্ক্রাইব করুন</span>
-                <span className="block">Subscribe to Newsletter</span>
-              </h3>
-              <p className="text-primary-100">
-                Get ৳500 off on your first order!
-              </p>
-            </div>
-
-            {isSubscribed ? (
-              <div className="text-center p-6 bg-green-500/20 rounded-2xl border border-green-500/30">
-                <div className="text-green-300 text-lg font-semibold mb-2">
-                  <span className="block bengali">সফলভাবে সাবস্ক্রাইব!</span>
-                  <span className="block">Successfully Subscribed!</span>
-                </div>
-                <p className="text-green-200 text-sm">
-                  Thank you for subscribing. You'll receive our updates soon!
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-primary-100 mb-2">
-                    <span className="bengali">ইমেইল ঠিকানা</span>
-                    <span className="ml-2">Email Address</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="your@email.com"
-                    required
-                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-primary-200 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-white text-primary-600 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center space-x-2"
-                >
-                  <EnvelopeIcon className="h-5 w-5" />
-                  <span>
-                    <span className="bengali">সাবস্ক্রাইব করুন</span>
-                    <span className="ml-2">Subscribe</span>
-                  </span>
-                </button>
-
-                <p className="text-xs text-primary-200 text-center">
-                  By subscribing, you agree to our Privacy Policy and Terms of Service.
-                  <span className="block bengali">সাবস্ক্রাইব করে, আপনি আমাদের গোপনীয়তা নীতি এবং সেবার শর্তাবলীতে সম্মত হন।</span>
-                </p>
-              </form>
-            )}
-
-            {/* Social Media Links */}
-            <div className="mt-8 pt-6 border-t border-white/20">
-              <p className="text-center text-primary-100 mb-4">
-                <span className="bengali">আমাদের অনুসরণ করুন</span>
-                <span className="ml-2">Follow us on</span>
-              </p>
-              <div className="flex justify-center space-x-4">
-                <a href="#" className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors duration-200">
-                  <span className="text-lg">📘</span>
-                </a>
-                <a href="#" className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors duration-200">
-                  <span className="text-lg">📷</span>
-                </a>
-                <a href="#" className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors duration-200">
-                  <span className="text-lg">🐦</span>
-                </a>
-                <a href="#" className="p-2 bg-white/20 rounded-full hover:bg-white/30 transition-colors duration-200">
-                  <span className="text-lg">📺</span>
-                </a>
-              </div>
+          {/* Social Media Links */}
+          <div className="mt-12 pt-8 border-t border-white/20">
+            <p className="text-gray-300 mb-4">Follow us on social media</p>
+            <div className="flex justify-center gap-6">
+              <a href="#" className="text-white hover:text-primary-400 transition-colors duration-200">
+                <span className="text-2xl">📘</span>
+                <span className="sr-only">Facebook</span>
+              </a>
+              <a href="#" className="text-white hover:text-primary-400 transition-colors duration-200">
+                <span className="text-2xl">📷</span>
+                <span className="sr-only">Instagram</span>
+              </a>
+              <a href="#" className="text-white hover:text-primary-400 transition-colors duration-200">
+                <span className="text-2xl">🐦</span>
+                <span className="sr-only">Twitter</span>
+              </a>
+              <a href="#" className="text-white hover:text-primary-400 transition-colors duration-200">
+                <span className="text-2xl">📺</span>
+                <span className="sr-only">YouTube</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default Newsletter;
