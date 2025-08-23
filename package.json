@@ -1,0 +1,63 @@
+{
+  "name": "bangladesh-ecommerce",
+  "version": "1.0.0",
+  "description": "A comprehensive, modern e-commerce platform for clothing businesses in Bangladesh",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "server": "cd server && npm run dev",
+    "server:build": "cd server && npm run build",
+    "server:start": "cd server && npm start",
+    "install:all": "npm install && cd server && npm install",
+    "setup": "npm run install:all && npm run build && npm run server:build"
+  },
+  "dependencies": {
+    "next": "14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@heroicons/react": "^2.0.18",
+    "tailwindcss": "^3.3.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "framer-motion": "^10.16.4",
+    "react-hook-form": "^7.47.0",
+    "react-hot-toast": "^2.4.1",
+    "zustand": "^4.4.6",
+    "axios": "^1.6.0",
+    "react-query": "^3.39.3",
+    "react-intersection-observer": "^9.5.2",
+    "react-image-zoom": "^1.0.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.2.0",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "14.0.0",
+    "@tailwindcss/forms": "^0.5.6",
+    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/aspect-ratio": "^0.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "ecommerce",
+    "bangladesh",
+    "clothing",
+    "fashion",
+    "nextjs",
+    "react",
+    "mongodb",
+    "nodejs"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
