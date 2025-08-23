@@ -142,14 +142,14 @@ const FeaturedProducts = () => {
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
                 activeCategory === category.id
-                  ? 'bg-primary-600 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                  ? 'bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-lg shadow-primary-500/25'
+                  : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 hover:shadow-md hover:border-primary-200'
               }`}
             >
               <span className="block">{category.name}</span>
-              <span className="block text-xs mt-1">{category.bengaliName}</span>
+              <span className="block text-xs mt-1 opacity-80">{category.bengaliName}</span>
             </button>
           ))}
         </div>
@@ -157,24 +157,24 @@ const FeaturedProducts = () => {
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product) => (
-            <div key={product.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+            <div key={product.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group transform hover:-translate-y-1">
               {/* Product Image */}
               <div className="relative overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
 
                 {/* New Badge */}
                 {product.isNew && (
-                  <div className="absolute top-4 left-4 bg-accent-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
                     New
                   </div>
                 )}
 
                 {/* Discount Badge */}
-                <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-red-500 to-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
                   -{product.discount}%
                 </div>
 
@@ -191,8 +191,8 @@ const FeaturedProducts = () => {
                 </button>
 
                 {/* Quick Actions Overlay */}
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <button className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-full font-semibold transition-colors duration-200 flex items-center gap-2">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-sm">
+                  <button className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-3 rounded-full font-semibold transition-all duration-200 flex items-center gap-2 shadow-xl hover:scale-105">
                     <ShoppingCartIcon className="h-5 w-5" />
                     Quick View
                   </button>
