@@ -3,6 +3,7 @@ import { Inter, Noto_Sans_Bengali } from 'next/font/google';
 import './globals.css';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
+import FloatingChat from '../components/common/FloatingChat';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -15,12 +16,12 @@ const notoSansBengali = Noto_Sans_Bengali({
 });
 
 export const metadata: Metadata = {
-  title: 'BanglaFashion - Premium Clothing for Bangladesh',
-  description: 'Discover premium clothing for every occasion. From traditional elegance to modern fashion, find your perfect look with Bangladesh\'s finest collection.',
-  keywords: 'bangladesh, clothing, fashion, traditional, modern, ecommerce, online shopping',
-  authors: [{ name: 'BanglaFashion Team' }],
-  creator: 'BanglaFashion',
-  publisher: 'BanglaFashion',
+  title: 'Z Fashion - Premium Style Collection',
+  description: 'Discover premium clothing for every occasion. From traditional elegance to modern fashion, find your perfect look with Z Fashion\'s finest collection.',
+  keywords: 'z fashion, clothing, fashion, traditional, modern, ecommerce, online shopping, premium style',
+  authors: [{ name: 'Z Fashion Team' }],
+  creator: 'Z Fashion',
+  publisher: 'Z Fashion',
   formatDetection: {
     email: false,
     address: false,
@@ -35,16 +36,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'BanglaFashion - Premium Clothing for Bangladesh',
-    description: 'Discover premium clothing for every occasion. From traditional elegance to modern fashion, find your perfect look with Bangladesh\'s finest collection.',
-    url: 'https://bangladeshfashion.com',
-    siteName: 'BanglaFashion',
+    title: 'Z Fashion - Premium Style Collection',
+    description: 'Discover premium clothing for every occasion. From traditional elegance to modern fashion, find your perfect look with Z Fashion\'s finest collection.',
+    url: 'https://zfashion.com',
+    siteName: 'Z Fashion',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'BanglaFashion - Premium Clothing',
+        alt: 'Z Fashion - Premium Style Collection',
       },
     ],
     locale: 'en_US',
@@ -91,9 +92,9 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#0ea5e9" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="BanglaFashion" />
+        <meta name="apple-mobile-web-app-title" content="Z Fashion" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="application-name" content="BanglaFashion" />
+        <meta name="application-name" content="Z Fashion" />
       </head>
       <body className={`${inter.className} antialiased bg-white text-gray-900`}>
         <div className="flex flex-col min-h-screen">
@@ -102,6 +103,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <FloatingChat />
         </div>
       </body>
     </html>
