@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Noto_Sans_Bengali } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
@@ -8,11 +8,6 @@ import FloatingChat from '../components/common/FloatingChat';
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
-});
-
-const notoSansBengali = Noto_Sans_Bengali({ 
-  subsets: ['bengali'],
-  variable: '--font-noto-sans-bengali',
 });
 
 export const metadata: Metadata = {
@@ -81,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${notoSansBengali.variable}`}>
+    <html lang="en" className={inter.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

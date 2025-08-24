@@ -9,7 +9,7 @@ import {
   XMarkIcon,
   UserIcon
 } from '@heroicons/react/24/outline';
-import LanguageSwitcher from '../common/LanguageSwitcher';
+
 import UserMenu from '../auth/UserMenu';
 import SearchBar from '../search/SearchBar';
 import CartDrawer from '../cart/CartDrawer';
@@ -20,12 +20,12 @@ const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const navigation = [
-    { name: 'Men', bengaliName: 'পুরুষ', href: '/category/men' },
-    { name: 'Women', bengaliName: 'মহিলা', href: '/category/women' },
-    { name: 'Children', bengaliName: 'শিশু', href: '/category/children' },
-    { name: 'Traditional', bengaliName: 'ঐতিহ্যগত', href: '/category/traditional' },
-    { name: 'Casual', bengaliName: 'ক্যাজুয়াল', href: '/category/casual' },
-    { name: 'Formal', bengaliName: 'ফরমাল', href: '/category/formal' }
+    { name: 'Men', href: '/category/men' },
+    { name: 'Women', href: '/category/women' },
+    { name: 'Children', href: '/category/children' },
+    { name: 'Traditional', href: '/category/traditional' },
+    { name: 'Casual', href: '/category/casual' },
+    { name: 'Formal', href: '/category/formal' }
   ];
 
   return (
@@ -55,22 +55,15 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-primary-600 px-2 sm:px-3 py-2 text-sm font-medium transition-colors duration-200 group"
+                  className="text-gray-700 hover:text-primary-600 px-2 sm:px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >
-                  <span className="block">{item.name}</span>
-                  <span className="block text-xs text-gray-500 group-hover:text-primary-500 transition-colors duration-200">
-                    {item.bengaliName}
-                  </span>
+                  {item.name}
                 </a>
               ))}
             </nav>
 
             {/* Right Side Actions */}
             <div className="flex items-center space-x-2 sm:space-x-4">
-              {/* Language Switcher */}
-              <div className="hidden sm:block">
-                <LanguageSwitcher />
-              </div>
 
               {/* Search Button */}
               <button
@@ -129,15 +122,13 @@ const Header = () => {
                   href={item.href}
                   className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
                 >
-                  <span className="block">{item.name}</span>
-                  <span className="block text-sm text-gray-500">{item.bengaliName}</span>
+                  {item.name}
                 </a>
               ))}
               
               {/* Mobile-only actions */}
               <div className="pt-4 border-t border-gray-200">
                 <div className="flex items-center justify-between px-4 py-2">
-                  <LanguageSwitcher />
                   <UserMenu />
                 </div>
               </div>

@@ -35,7 +35,6 @@ const Newsletter = () => {
         <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl border border-slate-100">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3 sm:mb-4">
             Stay Updated
-            <span className="block text-lg sm:text-xl font-normal text-slate-600 mt-2">আপডেট থাকুন</span>
           </h2>
 
           <p className="text-base sm:text-lg text-slate-700 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
@@ -62,7 +61,6 @@ const Newsletter = () => {
                   className="w-full sm:w-auto bg-primary-600 hover:bg-primary-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold transition-colors duration-200 whitespace-nowrap text-sm sm:text-base"
                 >
                   Subscribe
-                  <span className="block text-xs sm:text-sm">সাবস্ক্রাইব করুন</span>
                 </button>
               </div>
             </form>

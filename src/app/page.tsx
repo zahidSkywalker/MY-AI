@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import Hero from '../components/home/Hero';
+import HeroCarousel from '../components/home/HeroCarousel';
 import FeaturedProducts from '../components/home/FeaturedProducts';
 import Categories from '../components/home/Categories';
 import WhyChooseUs from '../components/home/WhyChooseUs';
