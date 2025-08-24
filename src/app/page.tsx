@@ -10,7 +10,7 @@ import Newsletter from '../components/home/Newsletter';
 export default function HomePage() {
   return (
     <main className="min-h-screen">
-      <Hero />
+      <HeroCarousel />
       <FeaturedProducts />
       <Categories />
       <WhyChooseUs />
