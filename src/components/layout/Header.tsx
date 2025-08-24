@@ -38,12 +38,12 @@ const Header = () => {
               <div className="flex-shrink-0">
                 <div className="flex items-center space-x-2">
                   {/* Professional Logo */}
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-600 via-purple-600 to-bengali-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-slate-900 rounded-2xl flex items-center justify-center shadow-lg">
                     <span className="text-white font-bold text-lg sm:text-xl">Z</span>
                   </div>
                   <div className="hidden sm:block">
-                    <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">Z Fashion</div>
-                    <div className="text-xs text-gray-500">Premium Style Collection</div>
+                    <div className="text-lg sm:text-xl font-bold text-slate-900">Z Fashion</div>
+                    <div className="text-xs text-slate-500">Premium Style Collection</div>
                   </div>
                 </div>
               </div>

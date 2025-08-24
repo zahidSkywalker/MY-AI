@@ -73,11 +73,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary-600 via-purple-600 to-bengali-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-10 h-10 bg-slate-900 rounded-2xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-xl">Z</span>
               </div>
               <div>
-                <div className="text-xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">Z Fashion</div>
+                <div className="text-xl font-bold text-slate-900">Z Fashion</div>
                 <div className="text-sm text-gray-400">Premium Style Collection</div>
               </div>
             </div>

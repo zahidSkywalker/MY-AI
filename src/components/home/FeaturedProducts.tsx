@@ -126,9 +126,9 @@ const FeaturedProducts = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Featured Products
-            <span className="block text-xl text-gray-600 mt-2">বৈশিষ্ট্যযুক্ত পণ্য</span>
+            <span className="block text-xl text-slate-600 mt-2">বৈশিষ্ট্যযুক্ত পণ্য</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Discover our handpicked collection of premium clothing items,

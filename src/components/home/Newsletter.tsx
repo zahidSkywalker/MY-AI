@@ -32,13 +32,13 @@ const Newsletter = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="bg-white/10 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 border border-white/30 shadow-2xl">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl border border-slate-100">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3 sm:mb-4">
             Stay Updated
-            <span className="block text-lg sm:text-xl font-normal text-gray-200 mt-2">আপডেট থাকুন</span>
+            <span className="block text-lg sm:text-xl font-normal text-slate-600 mt-2">আপডেট থাকুন</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
+          <p className="text-base sm:text-lg text-slate-700 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
             Subscribe to our newsletter for exclusive offers, special deals, and new arrivals.
             Be the first to know about our latest collections and promotions.
           </p>
@@ -88,8 +88,8 @@ const Newsletter = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                 </svg>
               </div>
-              <h3 className="font-semibold text-white mb-1 text-sm sm:text-base">Exclusive Offers</h3>
-              <p className="text-xs sm:text-sm text-gray-300">Special discounts for subscribers</p>
+              <h3 className="font-semibold text-slate-900 mb-1 text-sm sm:text-base">Exclusive Offers</h3>
+              <p className="text-xs sm:text-sm text-slate-600">Special discounts for subscribers</p>
             </div>
             <div className="text-center">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-500/20 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
