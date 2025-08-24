@@ -13,7 +13,7 @@ const CartDrawer = ({ onClose }: CartDrawerProps) => {
     {
       id: '1',
       name: 'Traditional Jamdani Saree',
-      bengaliName: 'ঐতিহ্যগত জামদানি শাড়ি',
+
       price: 8500,
       quantity: 1,
       image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
@@ -23,7 +23,7 @@ const CartDrawer = ({ onClose }: CartDrawerProps) => {
     {
       id: '2',
       name: 'Modern Kurta Set',
-      bengaliName: 'আধুনিক কুর্তা সেট',
+
       price: 3200,
       quantity: 2,
       image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
@@ -45,7 +45,6 @@ const CartDrawer = ({ onClose }: CartDrawerProps) => {
             <ShoppingBagIcon className="h-6 w-6 text-primary-600" />
             <h2 className="text-lg font-semibold text-gray-900">
               Shopping Cart
-              <span className="block text-sm font-normal text-gray-500">শপিং কার্ট</span>
             </h2>
           </div>
           <button
@@ -82,9 +81,7 @@ const CartDrawer = ({ onClose }: CartDrawerProps) => {
                   <h3 className="font-medium text-gray-900 text-sm">
                     {item.name}
                   </h3>
-                  <p className="text-xs text-gray-500 mb-2">
-                    {item.bengaliName}
-                  </p>
+
                   <div className="flex items-center space-x-4 text-sm text-gray-600 mb-2">
                     <span>Size: {item.size}</span>
                     <span>Color: {item.color}</span>
