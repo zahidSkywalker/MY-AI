@@ -118,18 +118,13 @@ const Categories = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-xl font-bold mb-2">
                     {category.name}
-                    <span className="block text-sm font-normal mt-1 opacity-90">
-                      {category.bengaliName}
-                    </span>
                   </h3>
 
                   <p className="text-sm opacity-90 mb-3 line-clamp-2">
                     {category.description}
                   </p>
 
-                  <p className="text-xs opacity-75 mb-4">
-                    {category.bengaliDescription}
-                  </p>
+
 
                   {/* Hover Effect - Show more info */}
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -155,7 +150,6 @@ const Categories = () => {
         <div className="text-center mt-12">
           <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-full font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl">
             View All Categories
-            <span className="block text-sm mt-1">সব বিভাগ দেখুন</span>
           </button>
         </div>
       </div>
